@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LivPaC</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adding Font Awesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Adding meta description for better SEO -->
+    <meta name="description" content="Get in touch with LivPaC, Liverpool's parent carer forum supporting families of children with special educational needs and disabilities.">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Contact LivPaC</h1>
+            <p class="subtitle">Get in touch with the Liverpool Parents and Carers Forum</p>
+        </div>
+        <div class="logo-container">
+            <i class="fas fa-hands-holding-child fa-3x"></i>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="policies.html">Policies</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2><i class="fas fa-paper-plane"></i> Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have a question about our resources, want to get involved, or need support navigating SEND services in Liverpool, the LivPaC team is here to help.</p>
+        </section>
+
+        <div class="contact-container">
+            <section class="contact-details">
+                <h3><i class="fas fa-address-card"></i> Our Contact Details</h3>
+                <ul class="details">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Liverpool, UK</li>
+                    <li><i class="fas fa-phone"></i> <strong>Telephone:</strong> <a href="tel:+447504544638">+44 7504 544 638</a></li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@LivPaC.org.uk">info@LivPaC.org.uk</a></li>
+                    <li><i class="fas fa-clock"></i> <strong>Operation Hours:</strong> Monday - Friday: 8:00 am - 5:00 pm <br><em>(Please note response times may vary)</em></li>
+                </ul>
+            </section>
+
+            <section class="contact-form">
+                <h3><i class="fas fa-comment-dots"></i> Send Us a Message</h3>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (optional):</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Please select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Support Request</option>
+                            <option value="resources">Resources Information</option>
+                            <option value="getinvolved">Get Involved</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkboxes">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I consent to LivPaC storing my data for the purpose of responding to my inquiry.</label>
+                    </div>
+                    
+                    <button type="submit" class="button"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </section>
+        </div>
+
+        <section class="social-media">
+            <h2><i class="fas fa-share-alt"></i> Connect With Us</h2>
+            <ul class="social-links">
+                <li><a href="[Link to LivPaC Facebook Page]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://twitter.com/LivPaCL8" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="[Link to LivPaC Instagram Profile]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 LivPaC | <a href="policies.html">Policies</a> | <a href="[Link to Accessibility Statement]">Accessibility Statement</a></p>
+    </footer>
+</body>
+</html>

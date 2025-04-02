@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - LivPaC</title>
     <link rel="stylesheet" href="style.css">
-    <!-- You might want to add a link to Font Awesome or another icon library here if you want icons -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <!-- Adding Font Awesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Adding meta description for better SEO -->
+    <meta name="description" content="Access resources for parents and carers of children with special educational needs and disabilities (SEND) in Liverpool.">
 </head>
 <body>
-    <header style="display: flex; align-items: center; justify-content: space-between;">
+    <header>
         <div>
-            <h1 style="font-size: 3rem;">LivPaC Policies</h1>
-            <p class="subtitle" style="font-size: 1.5rem;">Liverpool Parents and Carers Forum</p>
+            <h1>LivPaC Resources</h1>
+            <p class="subtitle">Liverpool Parents and Carers Forum</p>
         </div>
-        <img src="images/logo.png" alt="LivPaC Logo" class="logo" style="width: 80px; height: auto;">
+        <div class="logo-container">
+            <i class="fas fa-hands-holding-child fa-3x"></i>
+        </div>
     </header>
 
     <nav class="main-nav">
@@ -23,205 +27,290 @@
             <li><a href="about-us.html">About Us</a></li>
             <li><a href="resources.html" class="active">Resources</a></li>
             <li><a href="policies.html">Policies</a></li>
-            <!-- Add more navigation items as needed -->
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
         <section class="intro">
+            <h2><i class="fas fa-book-open"></i> SEND Resources</h2>
             <p>Welcome to the LivPaC Resources page. The resources included here can be used by both parents/carers and professionals. We've gathered information covering a number of different focus areas, all listed in alphabetical order below to make finding what you need easier.</p>
         </section>
 
         <section class="callout">
-            <h2>Share a Key Resource!</h2>
+            <h2><i class="fas fa-star"></i> Share a Key Resource!</h2>
             <p>Liverpool City Council's Culture Liverpool team have compiled an excellent SEND parenting resource page. We encourage you to explore it and share it widely:</p>
             <ul>
-                <li><strong>Culture Liverpool SEND Parenting Page:</strong> <a href="https://www.cultureliverpool.co.uk/send-parenting/" target="_blank" rel="noopener noreferrer">https://www.cultureliverpool.co.uk/send-parenting/</a></li>
+                <li><strong>Culture Liverpool SEND Parenting Page:</strong> <a href="https://www.cultureliverpool.co.uk/send-parenting/" target="_blank" rel="noopener noreferrer">https://www.cultureliverpool.co.uk/send-parenting/ <i class="fas fa-external-link-alt fa-sm"></i></a></li>
             </ul>
             <p>Please share this link with your networks, add it to your websites and social media platforms, and share it with your teams to help it reach more parents and carers.</p>
         </section>
 
         <section class="resource-directory">
-            <h2>LivPaC Resource Directory</h2>
-            <p>Explore resources organised by topic:</p>
+            <h2><i class="fas fa-folder-open"></i> LivPaC Resource Directory</h2>
+            
+            <div class="search-container">
+                <p>Search for specific resources or topics:</p>
+                <div class="search-box">
+                    <input type="text" id="resourceSearch" placeholder="Type to search resources..." aria-label="Search resources">
+                    <button type="button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <div id="resourceCategories">
+                <article class="resource-category" data-category="bereavement">
+                    <h3><i class="fas fa-heart-broken"></i> Bereavement resources</h3>
+                    <p>Find support and guidance for families navigating bereavement.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Bereavement Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Bereavement Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <!-- Add More Links Here -->
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Bereavement resources (FOCUS)</h3>
-                <p>Find support and guidance for families navigating bereavement.</p>
-                <ul>
-                    <li><a href="[Link Here]">Bereavement Resource 1 [Link Here]</a></li>
-                    <li><a href="[Link Here]">Bereavement Resource 2 [Link Here]</a></li>
-                    <!-- Add More Links Here -->
-                </ul>
-            </article>
+                <article class="resource-category" data-category="early-years">
+                    <h3><i class="fas fa-child"></i> Early Years / SEND resources</h3>
+                    <p>Information and support specific to early years development and Special Educational Needs.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Early Years Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Early Years Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <!-- Add More Links Here -->
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Early Years / SEND resources (FOCUS)</h3>
-                <p>Information and support specific to early years development and Special Educational Needs.</p>
-                <ul>
-                    <li><a href="[Link Here]">Early Years Resource 1 [Link Here]</a></li>
-                    <li><a href="[Link Here]">Early Years Resource 2 [Link Here]</a></li>
-                    <!-- Add More Links Here -->
-                </ul>
-            </article>
+                <article class="resource-category" data-category="support-groups">
+                    <h3><i class="fas fa-users"></i> Liverpool SEND Support Groups</h3>
+                    <p>Connect with local groups offering peer support and information.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Support Group List/Directory <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Specific Group 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <!-- Add More Links Here -->
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                 <h3>Liverpool SEND Support Groups (FOCUS)</h3>
-                 <p>Connect with local groups offering peer support and information.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Support Group List/Directory [Link Here]</a></li>
-                     <li><a href="[Link Here]">Specific Group 1 [Link Here]</a></li>
-                     <!-- Add More Links Here -->
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="mental-health">
+                    <h3><i class="fas fa-brain"></i> Mental Health Support</h3>
+                    <p>Access resources dedicated to mental health and wellbeing for children, young people, and families.</p>
+                    <ul>
+                        <li><em>See specific CAMHS Partnership links below</em></li>
+                        <li><a href="[Link Here]">General Mental Health Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">General Mental Health Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Mental Health Support (FOCUS)</h3>
-                <p>Access resources dedicated to mental health and wellbeing for children, young people, and families.</p>
-                <ul>
-                    <li><em>See specific CAMHS Partnership links below</em></li>
-                    <li><a href="[Link Here]">General Mental Health Resource 1 [Link Here]</a></li>
-                    <li><a href="[Link Here]">General Mental Health Resource 2 [Link Here]</a></li>
-                </ul>
-            </article>
+                <article class="resource-category" data-category="mental-health camhs">
+                    <h3><i class="fas fa-hands-helping"></i> Mental Health - Liverpool CAMHS Partnership Links</h3>
+                    <p>Direct links to services within the Liverpool CAMHS partnership:</p>
+                    <ul>
+                        <li><a href="https://www.liverpoolcamhs.com/support/liverpool-camhs-single-point-of-access/" target="_blank" rel="noopener noreferrer">CAMHS Single Point of Access (SPA) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/young-persons-advisory-service/" target="_blank" rel="noopener noreferrer">YPAS (Young Persons Advisory Service) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/merseyside-youth-association/" target="_blank" rel="noopener noreferrer">MYA (Merseyside Youth Association) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/barnardos-action-with-young-carers/" target="_blank" rel="noopener noreferrer">Barnardo's (Action with Young Carers) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/fresh-camhs/" target="_blank" rel="noopener noreferrer">Team Fresh (CAMHS) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/adhd-foundation/" target="_blank" rel="noopener noreferrer">ADHD Foundation <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/kooth/" target="_blank" rel="noopener noreferrer">Kooth (Online Mental Wellbeing Community) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/bullybusters/" target="_blank" rel="noopener noreferrer">Bullybusters <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="https://www.liverpoolcamhs.com/support/alder-hey-eating-disorder-service-for-young-people-edys/" target="_blank" rel="noopener noreferrer">Alder Hey EDYS (Eating Disorder Service) <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-             <article class="resource-category">
-                <h3>Mental Health - Liverpool CAMHS Partnership Links</h3>
-                <p>Direct links to services within the Liverpool CAMHS partnership:</p>
-                <ul>
-                    <li><a href="https://www.liverpoolcamhs.com/support/liverpool-camhs-single-point-of-access/" target="_blank" rel="noopener noreferrer">CAMHS Single Point of Access (SPA)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/young-persons-advisory-service/" target="_blank" rel="noopener noreferrer">YPAS (Young Persons Advisory Service)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/merseyside-youth-association/" target="_blank" rel="noopener noreferrer">MYA (Merseyside Youth Association)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/barnardos-action-with-young-carers/" target="_blank" rel="noopener noreferrer">Barnardo's (Action with Young Carers)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/fresh-camhs/" target="_blank" rel="noopener noreferrer">Team Fresh (CAMHS)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/adhd-foundation/" target="_blank" rel="noopener noreferrer">ADHD Foundation</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/kooth/" target="_blank" rel="noopener noreferrer">Kooth (Online Mental Wellbeing Community)</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/bullybusters/" target="_blank" rel="noopener noreferrer">Bullybusters</a></li>
-                    <li><a href="https://www.liverpoolcamhs.com/support/alder-hey-eating-disorder-service-for-young-people-edys/" target="_blank" rel="noopener noreferrer">Alder Hey EDYS (Eating Disorder Service)</a></li>
-                </ul>
-            </article>
+                <article class="resource-category" data-category="useful general">
+                    <h3><i class="fas fa-bookmark"></i> Other Useful Resources</h3>
+                    <p>A collection of additional links and documents that may be helpful.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Useful Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Useful Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Other Useful Resources</h3>
-                 <p>A collection of additional links and documents that may be helpful.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Useful Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Useful Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="blogs parents">
+                    <h3><i class="fas fa-blog"></i> Parent Blogs</h3>
+                    <p>Read experiences and insights from other parents and carers.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Parent Blog 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Parent Blog 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Parent Blogs</h3>
-                 <p>Read experiences and insights from other parents and carers.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Parent Blog 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Parent Blog 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="partners links">
+                    <h3><i class="fas fa-handshake"></i> Partner Websites</h3>
+                    <p>Links to key organisations LivPaC works with.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Partner Organisation 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Partner Organisation 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Liverpool Local Offer <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Partner Websites</h3>
-                 <p>Links to key organisations LivPaC works with.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Partner Organisation 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Partner Organisation 2 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Liverpool Local Offer [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="adult transition">
+                    <h3><i class="fas fa-user-graduate"></i> Preparing for Adult Life</h3>
+                    <p>Resources focused on transition planning, post-16 options, and pathways to adulthood.</p>
+                    <ul>
+                        <li><a href="[Link Here]">PfA Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">PfA Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Preparing for Adult Life (FOCUS)</h3>
-                 <p>Resources focused on transition planning, post-16 options, and pathways to adulthood.</p>
-                 <ul>
-                     <li><a href="[Link Here]">PfA Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">PfA Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="send general">
+                    <h3><i class="fas fa-hands"></i> SEND Resources and Support</h3>
+                    <p>General information covering various aspects of Special Educational Needs and Disabilities.</p>
+                    <ul>
+                        <li><a href="[Link Here]">General SEND Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">General SEND Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>SEND Resources and Support</h3>
-                 <p>General information covering various aspects of Special Educational Needs and Disabilities.</p>
-                 <ul>
-                     <li><a href="[Link Here]">General SEND Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">General SEND Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="send toolkit">
+                    <h3><i class="fas fa-toolbox"></i> "SEND Toolkit"</h3>
+                    <p>An introduction to supporting children with additional needs in the classroom.</p>
+                    <ul>
+                        <li><a href="[Link Here]">SEND Toolkit Resource/Document <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-             <article class="resource-category">
-                <h3>"SEND Toolkit"</h3>
-                 <p>An introduction to supporting children with additional needs in the classroom.</p>
-                 <ul>
-                     <li><a href="[Link Here]">SEND Toolkit Resource/Document [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="support general">
+                    <h3><i class="fas fa-life-ring"></i> Support</h3>
+                    <p>General support resources for families and professionals.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Support Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Support Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                 <h3>Support</h3>
-                 <p>General support resources for families and professionals.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Support Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Support Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="covid children">
+                    <h3><i class="fas fa-virus-slash"></i> Supporting children through Covid-19</h3>
+                    <p><em>Archived/Contextual Information:</em> Resources developed during the pandemic to support children's wellbeing.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Covid Child Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Covid Child Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-             <article class="resource-category">
-                 <h3>Supporting children through Covid-19 (FOCUS)</h3>
-                 <p><em>Archived/Contextual Information:</em> Resources developed during the pandemic to support children's wellbeing.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Covid Child Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Covid Child Resource 2 [Link Here]</a></li>
-                 </ul>
-             </article>
+                <article class="resource-category" data-category="covid family">
+                    <h3><i class="fas fa-house-user"></i> Supporting families during Covid-19</h3>
+                    <p><em>Archived/Contextual Information:</em> Resources developed during the pandemic offering support to families.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Covid Family Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Covid Family Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-             <article class="resource-category">
-                 <h3>Supporting families during Covid-19 (FOCUS)</h3>
-                 <p><em>Archived/Contextual Information:</em> Resources developed during the pandemic offering support to families.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Covid Family Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Covid Family Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="autism">
+                    <h3><i class="fas fa-puzzle-piece"></i> Supporting Students with Autism</h3>
+                    <p>Specific strategies and resources for understanding and supporting autistic students.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Autism Support Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Autism Support Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-            <article class="resource-category">
-                <h3>Supporting Students with Autism</h3>
-                 <p>Specific strategies and resources for understanding and supporting autistic students.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Autism Support Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Autism Support Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
+                <article class="resource-category" data-category="transition school">
+                    <h3><i class="fas fa-school"></i> Transition back to school</h3>
+                    <p><em>Archived/Contextual Information:</em> Guidance related to returning to school settings, particularly post-disruption.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Transition Resource 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Transition Resource 2 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
 
-             <article class="resource-category">
-                <h3>Transition back to school (FOCUS)</h3>
-                 <p><em>Archived/Contextual Information:</em> Guidance related to returning to school settings, particularly post-disruption.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Transition Resource 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Transition Resource 2 [Link Here]</a></li>
-                 </ul>
-            </article>
-
-             <article class="resource-category">
-                 <h3>Website and activity ideas</h3>
-                 <p>Links to engaging websites and activity suggestions for children and young people.</p>
-                 <ul>
-                     <li><a href="[Link Here]">Activity Website 1 [Link Here]</a></li>
-                     <li><a href="[Link Here]">Activity Idea Resource [Link Here]</a></li>
-                 </ul>
-            </article>
-
+                <article class="resource-category" data-category="activities">
+                    <h3><i class="fas fa-gamepad"></i> Website and activity ideas</h3>
+                    <p>Links to engaging websites and activity suggestions for children and young people.</p>
+                    <ul>
+                        <li><a href="[Link Here]">Activity Website 1 <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                        <li><a href="[Link Here]">Activity Idea Resource <i class="fas fa-external-link-alt fa-sm"></i></a></li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
         <section class="max-cards">
-            <h2>Max Cards</h2>
+            <h2><i class="fas fa-id-card"></i> Max Cards</h2>
             <p>LivPaC facilitates access to Max Cards for eligible families in Liverpool, offering discounts at various attractions.</p>
-            <ul>
-                <li><a href="[Link to View/Download Membership Form]" class="button">Apply for a Max Card Form [Link Here]</a></li>
-            </ul>
+            <div class="text-center">
+                <a href="[Link to View/Download Membership Form]" class="button"><i class="fas fa-file-download"></i> Apply for a Max Card</a>
+            </div>
         </section>
+        
+        <section class="contact-info">
+             <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+             <p>Need help finding a specific resource? We're here to assist you:</p>
+             <ul class="details">
+                 <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Liverpool, UK</li>
+                 <li><i class="fas fa-phone"></i> <strong>Telephone:</strong> <a href="tel:+447504544638">+44 7504 544 638</a></li>
+                 <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@LivPaC.org.uk">info@LivPaC.org.uk</a></li>
+                 <li><i class="fas fa-clock"></i> <strong>Operation Hours:</strong> Monday - Friday: 8:00 am - 5:00 pm <br><em>(Please note response times may vary)</em></li>
+             </ul>
+             <p class="text-center"><a href="contact.html" class="button"><i class="fas fa-paper-plane"></i> Contact Us</a></p>
+         </section>
     </main>
 
     <footer>
         <p>© 2025 LivPaC | <a href="policies.html">Policies</a> | <a href="[Link to Accessibility Statement]">Accessibility Statement</a></p>
     </footer>
+
+    <script>
+        // Enhanced search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('resourceSearch');
+            const searchButton = searchInput.nextElementSibling;
+            const searchResults = document.getElementById('searchResults');
+            const resourceCategories = document.getElementById('resourceCategories').getElementsByClassName('resource-category');
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                if (searchTerm === '') {
+                    searchResults.innerHTML = '';
+                    for (let category of resourceCategories) {
+                        category.style.display = 'block';
+                    }
+                    return;
+                }
+                
+                let resultsFound = 0;
+                
+                // First, hide all categories
+                for (let category of resourceCategories) {
+                    category.style.display = 'none';
+                }
+                
+                // Then show only those that match
+                for (let category of resourceCategories) {
+                    const categoryText = category.textContent.toLowerCase();
+                    if (categoryText.includes(searchTerm)) {
+                        category.style.display = 'block';
+                        resultsFound++;
+                    }
+                }
+                
+                // Update search results message
+                if (resultsFound === 0) {
+                    searchResults.innerHTML = '<p>No resources found. Try different keywords or <a href="contact.html">contact us</a> for assistance.</p>';
+                } else {
+                    searchResults.innerHTML = '<p>' + resultsFound + ' resource ' + 
+                        (resultsFound === 1 ? 'category' : 'categories') + ' found.</p>';
+                }
+            }
+            
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Clear search on focus
+            searchInput.addEventListener('focus', function() {
+                if (searchInput.value.trim() !== '') {
+                    searchInput.value = '';
+                    for (let category of resourceCategories) {
+                        category.style.display = 'block';
+                    }
+                    searchResults.innerHTML = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
