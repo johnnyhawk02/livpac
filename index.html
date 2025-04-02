@@ -9,10 +9,12 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 </head>
 <body>
-    <header>
-        <!-- Optional: <img src="livpac-logo.png" alt="LivPaC Logo" class="logo"> -->
-        <h1>LivPaC</h1>
-        <p class="subtitle">Liverpool Parents and Carers Forum</p>
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+            <h1 style="font-size: 3rem;">LivPaC</h1>
+            <p class="subtitle" style="font-size: 1.5rem;">Liverpool Parents and Carers Forum</p>
+        </div>
+        <img src="images/logo.png" alt="LivPaC Logo" class="logo" style="width: 80px; height: auto;">
     </header>
 
     <nav class="main-nav">
@@ -49,14 +51,7 @@
 
         <section class="twitter-feed">
             <h2>Latest Updates from LivPaC</h2>
-            <div class="placeholder-message">
-                <p>Nothing to see here - yet</p>
-                <p>When they post, their posts will show up here.</p>
-            </div>
-            <!-- Option 1: Embed Twitter Feed -->
-            <a class="twitter-timeline" data-height="400" href="https://twitter.com/LivPaCL8?ref_src=twsrc%5Etfw">Tweets by LivPaCL8</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <!-- Option 2: Simple Link -->
-            <!-- <p>Follow our latest updates on Twitter: <a href="https://twitter.com/LivPaCL8" target="_blank" rel="noopener noreferrer">@LivPaCL8</a></p> -->
+            <script type="text/javascript" src="https://www.juicer.io/embed/livpacl8/embed-code.js" async defer></script>
         </section>
 
         <section class="contact-info">
@@ -107,6 +102,18 @@
             setTimeout(function() {
                 clearInterval(checkInterval);
             }, 20000);
+        });
+
+        window.addEventListener("message", function(event) {
+            if (event.origin != "https://platform.twitter.com") return;
+
+            let params = event.data["twttr.embed"].params;
+
+            let i = parseInt(params[0].height);
+
+            if (i > 0) {
+                document.getElementById("tweet_" + params[0].data.tweet_id).height = i;
+            }
         });
     </script>
 </body>
