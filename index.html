@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>LivPaC - Liverpool Parents and Carers Forum</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for professional icons -->
@@ -19,6 +19,9 @@
         <div class="logo-container">
             <i class="fas fa-hands-holding-child fa-3x"></i>
         </div>
+        <button class="burger-menu" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
     <nav class="main-nav">
@@ -88,24 +91,15 @@
     </footer>
 
     <script>
-        // Hide placeholder when Twitter widget loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check for Twitter widget iframe every second until found
-            const checkInterval = setInterval(function() {
-                const twitterIframe = document.querySelector('.twitter-timeline-rendered');
-                const placeholder = document.querySelector('.placeholder-message');
-                
-                if (twitterIframe && placeholder) {
-                    // If Twitter content loaded, hide placeholder
-                    placeholder.style.display = 'none';
-                    clearInterval(checkInterval);
-                }
-            }, 1000);
-            
-            // Stop checking after 20 seconds (timeout)
-            setTimeout(function() {
-                clearInterval(checkInterval);
-            }, 20000);
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mainNav = document.querySelector('.main-nav');
+
+            burgerMenu.addEventListener('click', () => {
+                const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
+                burgerMenu.setAttribute('aria-expanded', !isExpanded);
+                mainNav.classList.toggle('active');
+            });
         });
     </script>
 </body>

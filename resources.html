@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Resources - LivPaC</title>
     <link rel="stylesheet" href="style.css">
     <!-- Adding Font Awesome for professional icons -->
@@ -19,6 +19,9 @@
         <div class="logo-container">
             <i class="fas fa-hands-holding-child fa-3x"></i>
         </div>
+        <button class="burger-menu" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
     <nav class="main-nav">
@@ -253,6 +256,19 @@
     <script>
         // Enhanced search functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Burger menu functionality
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (burgerMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
+                    burgerMenu.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.classList.toggle('active');
+                });
+            }
+            
+            // Existing search functionality
             const searchInput = document.getElementById('resourceSearch');
             const searchButton = searchInput.nextElementSibling;
             const searchResults = document.getElementById('searchResults');

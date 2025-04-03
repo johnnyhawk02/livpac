@@ -53,68 +53,80 @@ main {
     padding: 40px var(--side-padding);
 }
 
-/* Header Styles - Minimal and clean */
+/* Header Styles - Reduced size for better mobile experience */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px var(--side-padding);
+    padding: 16px var(--side-padding);
     background-color: var(--primary-color);
     max-width: 100%;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
     font-weight: 500;
     letter-spacing: -0.5px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 header .subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
 }
 
-/* Styling for the new Font Awesome logo icon */
+/* Styling for the logo icon - reduced size */
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     transition: transform var(--transition-speed) ease;
 }
 
-.logo-container:hover {
-    transform: scale(1.05);
-}
-
 .logo-container i {
+    font-size: 1.8rem;
     color: var(--primary-color);
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
-/* Responsive header adjustments */
+/* Responsive header adjustments - even smaller on phones */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+    }
+    
+    header div:first-child {
+        text-align: left;
+        flex: 1;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header .subtitle {
+        font-size: 0.8rem;
     }
     
     .logo-container {
-        margin-top: 16px;
-        width: 70px;
-        height: 70px;
+        margin-top: 0;
+        width: 45px;
+        height: 45px;
+        margin-left: 12px;
     }
     
     .logo-container i {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -349,15 +361,87 @@ section.callout {
     color: var(--primary-color);
 }
 
+/* Burger Menu - Clean implementation */
+.burger-menu {
+    display: none;
+    background-color: var(--primary-dark);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 1010;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+    
+    .main-nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+    
     .main-nav ul {
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+    }
+    
+    .main-nav.active ul {
+        display: flex;
     }
     
     .main-nav a {
-        padding: 12px 15px;
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
         font-size: 0.95rem;
+    }
+    
+    /* Fix main content padding to account for smaller header */
+    main {
+        padding-top: 20px;
+    }
+    
+    /* Adjust section padding for better mobile spacing */
+    section {
+        padding: 20px 16px;
+    }
+    
+    /* Make contact details more mobile-friendly */
+    .contact-info .details li {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .contact-info .details i {
+        width: auto;
+        margin-right: 8px;
+    }
+    
+    /* Make form elements more touch-friendly */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Make buttons larger for touch */
+    .button {
+        padding: 12px 24px;
+        font-size: 1rem;
     }
 }
 
