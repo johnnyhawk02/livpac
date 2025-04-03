@@ -46,8 +46,8 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Ensure sufficient padding-top to clear the fixed header */
-    padding-top: calc(var(--header-height) + 70px); /* Increased extra space by 50px (20 + 50) */
+    /* Remove padding-top to eliminate space at the top of screens */
+    padding-top: var(--header-height); /* Reduced to just the header height */
 }
 
 main {
@@ -74,12 +74,24 @@ header {
 }
 
 header div:first-child {
-    /* Use flexbox to align title and subtitle horizontally */
     display: flex;
-    align-items: baseline; /* Align text along the baseline */
-    justify-content: center; /* Center the items */
-    gap: 10px; /* Add space between title and subtitle */
+    align-items: center; 
+    justify-content: flex-start; /* Changed from center to flex-start for left alignment */
+    gap: 15px;
     flex: 1;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@media (min-width: 769px) {
+    .header-logo {
+        height: 65px; /* Larger on desktop */
+    }
 }
 
 header h1 {
@@ -184,6 +196,30 @@ a {
 a:hover, a:focus {
     color: var(--link-hover-color);
     text-decoration: none;
+}
+
+/* Remove bullet points from all lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Only apply left padding to lists that need indentation but no bullets */
+main ul:not(.social-links):not(.main-nav ul) {
+    padding-left: 20px;
+}
+
+/* For lists that have custom icons instead of bullets, maintain their styling */
+.resource-category li,
+.support-locations ul li,
+ul li.with-icon {
+    position: relative;
+    padding-left: 24px;
+}
+
+/* For lists in content areas that need spacing but no bullets */
+section ul:not(.social-links) li {
+    margin-bottom: 8px;
 }
 
 /* Typography - Mobile First */
@@ -752,8 +788,8 @@ footer {
     }
     
     body {
-        /* Apply sufficient padding-top for desktop header */
-        padding-top: calc(var(--header-height) + 70px); /* Increased extra space by 50px (20 + 50) */
+        /* Apply padding-top for desktop header - reduced to match mobile */
+        padding-top: var(--header-height);
     }
     
     main {
