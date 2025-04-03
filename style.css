@@ -315,8 +315,12 @@ section.callout {
 }
 
 .img-placeholder.hero-img {
-    height: 200px;
+    height: 220px; /* Increased from 200px for better visual impact on mobile */
     margin-top: 15px;
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+    border-radius: 8px; /* Added subtle rounded corners */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    box-shadow: var(--shadow-sm); /* Add subtle shadow for depth */
 }
 
 .img-placeholder.feature-img {
@@ -983,7 +987,8 @@ footer {
     
     /* Image placeholders for desktop */
     .img-placeholder.hero-img {
-        height: 300px;
+        height: 380px; /* Increased from 300px for more impact on desktop */
+        margin-bottom: 25px; /* More bottom margin on desktop */
     }
     
     .img-placeholder.feature-img {
