@@ -77,24 +77,25 @@ header {
 
 /* Animations and transitions for a more polished experience */
 
-/* Header scroll effect styles */
+/* Header scroll effect styles - no shrinking but still adding shadow and color change */
 header.scrolled {
-    height: calc(var(--header-height) * 0.8);
+    /* Removed height change to keep consistent size */
     box-shadow: var(--shadow-lg);
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
 }
 
+/* Removed size transforms for header elements */
 header.scrolled .header-logo {
-    transform: scale(0.9);
+    /* No transform */
 }
 
 header.scrolled h1 {
-    font-size: 1.6rem;
+    /* No font size change */
 }
 
 header.scrolled .page-subtitle {
     opacity: 0.8;
-    font-size: 0.9rem;
+    /* No font size change */
 }
 
 /* Smooth transitions for all header elements */
