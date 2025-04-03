@@ -141,12 +141,47 @@
         document.addEventListener('DOMContentLoaded', () => {
             const burgerMenu = document.querySelector('.burger-menu');
             const mainNav = document.querySelector('.main-nav');
+            const header = document.querySelector('header');
 
+            // Toggle navigation menu
             burgerMenu.addEventListener('click', () => {
                 const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
                 burgerMenu.setAttribute('aria-expanded', !isExpanded);
                 mainNav.classList.toggle('active');
             });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Add visual effects to cards on scroll
+            const animateOnScroll = () => {
+                const items = document.querySelectorAll('.value-card, .highlight-box');
+                items.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (itemTop < windowHeight - 100) {
+                        item.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Check on scroll and on page load
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+            
+            // Add special styling to mission statement
+            const mission = document.querySelector('.mission');
+            if (mission) {
+                setTimeout(() => {
+                    mission.classList.add('highlight-animation');
+                }, 500);
+            }
         });
     </script>
 </body>

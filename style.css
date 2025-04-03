@@ -5,49 +5,51 @@
     box-sizing: border-box;
 }
 
+/* Enhanced design for modern, beautiful website */
 :root {
-    /* Clean minimal color palette */
-    --primary-color: #1a73e8; /* Professional blue */
-    --primary-dark: #0d47a1; /* Darker shade for hover states */
-    --primary-light: #e8f0fe; /* Very light blue for backgrounds */
+    /* Updated color palette for more visual appeal */
+    --primary-color: #2b6cb0; /* Richer blue */
+    --primary-dark: #1a4b8c; /* Deeper shade for more contrast */
+    --primary-light: #e9f2fe; /* Softer light blue for backgrounds */
     
-    --secondary-color: #5f6368; /* Google-style gray */
-    --secondary-light: #f1f3f4; /* Light gray for backgrounds */
+    --secondary-color: #4a5568; /* More sophisticated gray */
+    --secondary-light: #f7fafc; /* Cleaner light gray for backgrounds */
     
-    --accent-color: #34a853; /* Clean green */
-    --accent-dark: #1e8e3e; /* Darker green for hover states */
-    --accent-light: #e6f4ea; /* Light green for backgrounds */
+    --accent-color: #38a169; /* Vibrant but professional green */
+    --accent-dark: #276749; /* Deeper green for contrast */
+    --accent-light: #e6fffa; /* Soft green background */
     
-    --warning-color: #fbbc04; /* Clean amber */
+    --warning-color: #ecc94b; /* Warmer amber */
     
     --light-bg: #ffffff; /* Pure white background */
-    --border-color: #dadce0; /* Subtle gray border */
-    --text-color: #202124; /* Dark text for readability */
-    --light-text: #5f6368; /* Secondary text color */
+    --border-color: #e2e8f0; /* Subtle gray border */
+    --text-color: #2d3748; /* Slightly softer than pure black */
+    --light-text: #718096; /* Medium gray for secondary text */
     
     --link-color: var(--primary-color);
     --link-hover-color: var(--primary-dark);
     
-    --shadow-sm: 0 1px 2px rgba(60, 64, 67, 0.08);
-    --shadow-md: 0 2px 6px rgba(60, 64, 67, 0.12);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     --transition-speed: 0.25s;
 
+    /* Keep existing size values */
     --max-width: 1200px;
-    --side-padding: 16px; /* Default for mobile */
-    --header-height: 70px; /* Reduced from 90px for better mobile experience */
+    --side-padding: 16px;
+    --header-height: 70px;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: #fbfbfd; /* Very subtle off-white for body background */
     margin: 0;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Remove padding-top to eliminate space at the top of screens */
-    padding-top: var(--header-height); /* Reduced to just the header height */
+    padding-top: var(--header-height);
 }
 
 main {
@@ -56,8 +58,10 @@ main {
     padding: 20px var(--side-padding);
 }
 
-/* Updated Header Styles */
+/* Enhanced header styles */
 header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    box-shadow: var(--shadow-md);
     position: fixed;
     top: 0;
     left: 0;
@@ -66,11 +70,39 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px var(--side-padding); /* Reduced padding for mobile */
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
-    box-shadow: var(--shadow-md);
+    padding: 10px var(--side-padding);
     transition: all 0.3s ease;
     height: var(--header-height);
+}
+
+/* Animations and transitions for a more polished experience */
+
+/* Header scroll effect styles */
+header.scrolled {
+    height: calc(var(--header-height) * 0.8);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
+}
+
+header.scrolled .header-logo {
+    transform: scale(0.9);
+}
+
+header.scrolled h1 {
+    font-size: 1.6rem;
+}
+
+header.scrolled .page-subtitle {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Smooth transitions for all header elements */
+header,
+.header-logo,
+header h1,
+header .page-subtitle {
+    transition: all 0.3s ease-in-out;
 }
 
 header div:first-child {
@@ -247,15 +279,32 @@ section ul:not(.social-links) li {
 
 /* Typography - Mobile First */
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.8em;
-    color: var(--text-color);
+    font-weight: 600;
     line-height: 1.3;
-    font-weight: 500;
+    color: var(--text-color);
 }
 
 h2 { 
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 40px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.text-center h2::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h3 { 
@@ -270,8 +319,9 @@ p {
 
 /* Section Styling - Mobile First */
 section {
-    margin-bottom: 30px;
-    border-radius: 8px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section.intro {
@@ -298,8 +348,9 @@ section.callout {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 4px;
+    border-radius: 12px;
     overflow: hidden;
+    position: relative;
 }
 
 .img-placeholder i {
@@ -310,15 +361,20 @@ section.callout {
 
 .img-placeholder img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-placeholder:hover img {
+    transform: scale(1.05);
 }
 
 .img-placeholder.hero-img {
     height: 220px; /* Increased from 200px for better visual impact on mobile */
     margin-top: 15px;
     margin-bottom: 20px; /* Added margin bottom for spacing */
-    border-radius: 8px; /* Added subtle rounded corners */
+    border-radius: 12px; /* Added subtle rounded corners */
     overflow: hidden; /* Ensure content stays within rounded corners */
     box-shadow: var(--shadow-sm); /* Add subtle shadow for depth */
 }
@@ -345,7 +401,7 @@ section.callout {
 .resource-category {
     margin-bottom: 20px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: white;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
@@ -381,34 +437,78 @@ section.callout {
 /* Mobile-First Button Style */
 .button {
     display: inline-block;
-    width: 100%;
     background-color: var(--primary-color);
     color: white;
-    padding: 12px 20px;
-    border-radius: 4px;
+    padding: 12px 24px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    transition: background-color var(--transition-speed) ease;
+    transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
     text-align: center;
     border: none;
     cursor: pointer;
     margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.button:hover::after {
+    left: 100%;
 }
 
 .button:hover, .button:focus {
-    background-color: var(--link-hover-color);
+    background-color: var(--primary-dark);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Hero Section - Mobile First */
 .hero {
+    position: relative;
     text-align: center;
-    background-color: var(--primary-light);
-    padding: 30px var(--side-padding);
-    border-radius: 8px;
-    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--primary-light), #f0f7ff);
+    padding: 40px var(--side-padding);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at top right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(43, 108, 176, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero h2 {
@@ -432,9 +532,16 @@ section.callout {
 .highlight-box {
     padding: 20px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.highlight-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 .highlight-box h3 {
@@ -460,8 +567,15 @@ section.callout {
     padding: 20px;
     background-color: white;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Contact Info - Mobile First */
@@ -587,6 +701,11 @@ section.callout {
     margin-right: 8px;
     font-size: 1.2rem;
     color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.social-links li a:hover i {
+    transform: scale(1.2);
 }
 
 /* Mobile-optimized styles for contact page */
@@ -739,12 +858,22 @@ section.callout {
 
 /* Footer - Mobile First */
 footer {
+    background: linear-gradient(135deg, var(--secondary-color), #2d3748);
+    color: white;
+    padding: 30px var(--side-padding);
     text-align: center;
-    margin-top: 30px;
-    padding: 20px var(--side-padding);
-    font-size: 0.9rem;
-    color: var(--light-text);
-    background-color: var(--secondary-light);
+    margin-top: 50px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 /* Responsive Table Styles */
@@ -1059,7 +1188,7 @@ footer {
 
 .event-card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -1114,12 +1243,13 @@ footer {
 
 .service-item {
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     padding: 25px 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .service-item:hover {
@@ -1131,6 +1261,11 @@ footer {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover i {
+    transform: scale(1.2);
 }
 
 .service-item h3 {
@@ -1293,5 +1428,177 @@ footer {
     .join-us {
         padding: 35px;
         margin-top: 50px;
+    }
+}
+
+/* Fade-in animation for cards on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight-box,
+.service-item,
+.event-card,
+.value-card {
+    opacity: 0;
+}
+
+.highlight-box.visible,
+.service-item.visible,
+.event-card.visible,
+.value-card.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Add staggered delay for grid items */
+.highlights .highlight-box:nth-child(1),
+.service-grid .service-item:nth-child(1),
+.events-grid .event-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.highlights .highlight-box:nth-child(2),
+.service-grid .service-item:nth-child(2),
+.events-grid .event-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.highlights .highlight-box:nth-child(3),
+.service-grid .service-item:nth-child(3),
+.events-grid .event-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.highlights .highlight-box:nth-child(4),
+.service-grid .service-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Subtle hover effects for interactive elements */
+.service-item i, 
+.highlight-box i,
+.social-links i {
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover i, 
+.highlight-box:hover i,
+.social-links li a:hover i {
+    transform: scale(1.2);
+}
+
+/* Modern box shadow for card elements */
+.highlight-box, 
+.event-card, 
+.service-item,
+.resource-category {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile menu animation */
+.burger-menu .fa-bars {
+    transition: transform 0.3s ease;
+}
+
+.burger-menu[aria-expanded="true"] .fa-bars {
+    transform: rotate(90deg);
+}
+
+/* Mission statement styling */
+.mission-statement {
+    margin: 40px 0;
+}
+
+.mission {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--primary-dark);
+    position: relative;
+    padding: 30px 40px;
+    margin: 30px 0;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.mission.highlight-animation {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mission::before, .mission::after {
+    content: '"';
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    position: absolute;
+    color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.mission::before {
+    top: -10px;
+    left: 10px;
+}
+
+.mission::after {
+    bottom: -40px;
+    right: 10px;
+}
+
+/* Enhanced cards for policy page */
+.policy-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.policy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px 0 0 3px;
+}
+
+.policies-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 769px) {
+    .policies-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mission {
+        font-size: 1.5rem;
+        padding: 40px 60px;
     }
 }
